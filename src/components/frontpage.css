@@ -1,0 +1,36 @@
+.frontpage{
+   color: rgb(255, 255, 255);
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+.repRange{
+    background-color: rgba(241, 241, 241, 0.815);
+    padding: 50px;
+    border-radius: 5%;
+}
+
+.repRange form{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.repRange form button{
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.repRange form input{
+   margin: 0 auto;
+   margin-bottom: 10px;
+   text-align: center;
+   justify-content: center;
+   width: fit-content;
+   background: none;
+   color: rgb(104, 101, 101);
+
+}
