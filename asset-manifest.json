@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MehdiZaidaneS/gymapp/static/css/main.6f4e9fe5.css",
-    "main.js": "/MehdiZaidaneS/gymapp/static/js/main.bb4e0e96.js",
-    "static/js/787.bf097f3a.chunk.js": "/MehdiZaidaneS/gymapp/static/js/787.bf097f3a.chunk.js",
-    "index.html": "/MehdiZaidaneS/gymapp/index.html",
-    "main.6f4e9fe5.css.map": "/MehdiZaidaneS/gymapp/static/css/main.6f4e9fe5.css.map",
-    "main.bb4e0e96.js.map": "/MehdiZaidaneS/gymapp/static/js/main.bb4e0e96.js.map",
-    "787.bf097f3a.chunk.js.map": "/MehdiZaidaneS/gymapp/static/js/787.bf097f3a.chunk.js.map"
+    "main.css": "./static/css/main.6f4e9fe5.css",
+    "main.js": "./static/js/main.efc584c2.js",
+    "static/js/787.bf097f3a.chunk.js": "./static/js/787.bf097f3a.chunk.js",
+    "index.html": "./index.html",
+    "main.6f4e9fe5.css.map": "./static/css/main.6f4e9fe5.css.map",
+    "main.efc584c2.js.map": "./static/js/main.efc584c2.js.map",
+    "787.bf097f3a.chunk.js.map": "./static/js/787.bf097f3a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6f4e9fe5.css",
-    "static/js/main.bb4e0e96.js"
+    "static/js/main.efc584c2.js"
   ]
 }
