@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
           <Routes>
             <Route path="/">
-               <Route index element={<Frontpage  setEjercicio={setEjercicio}  setKilos={setKilos} set1Done={set1Done}/>}/> 
+              <Route index element={<Frontpage  setEjercicio={setEjercicio}  setKilos={setKilos} set1Done={set1Done}/>}/> 
               <Route path="component" element={<Component ejercicio={ejercicio} kilos={kilos} set1={set1} setKilos={setKilos} set1Done={set1Done}/>}/>
             </Route> 
           </Routes>
