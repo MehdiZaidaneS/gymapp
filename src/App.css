@@ -3,32 +3,6 @@ body{
   color: white;
 }
 
-.repRange{
-  text-align: center;
-}
-
-.repRange p{
-  font-size: 30px;
-  margin: 20px;
-}
-
-.repRange h1{
-  margin: 20px;
-  font-size: 50px;
-}
-
-
-.repRange input { 
-  font-size: 50px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-
-.repRange button { 
-  font-size: 50px;
-}
 
 .column{
   display: flex;
@@ -54,4 +28,15 @@ body{
 
 .sets button{
   font-size: 40px;
+}
+
+
+.repPRange{
+  text-align: center;
+  background-color: rgba(169, 169, 169, 0.616);
+  margin: 0 auto;
+  width: fit-content;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
 }

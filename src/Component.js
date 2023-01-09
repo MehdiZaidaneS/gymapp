@@ -15,6 +15,9 @@ const Component = (props) => {
     const [kilos2, setKilos2] = useState(0)
     const [kilos3, setKilos3] = useState(0)
 
+    const minRR = 10;
+    const maxRR = 12;
+
 
 
 
@@ -112,10 +115,8 @@ const Component = (props) => {
 
   return (
     <div>   
-      <div className="repRange">
-         <h1>Rep Range</h1>
-         <p>Minimun Rep: </p>
-         <p>Maximum Rep: </p>
+      <div className="repPRange">
+         <h1>Rep Range: {minRR}-{maxRR}</h1>
          <p>Last kilos at {props.ejercicio} : {props.kilos}kg</p>
       </div>
       <div className='column'>
@@ -128,7 +129,7 @@ const Component = (props) => {
                 <h1>{props.ejercicio}</h1>
                 <p>{set.name}</p>
                 <p>Kilos: {set.kilos}</p>
-                <input type="number" placeholder='Repeticiones' min={0} max={12} onChange={e => setRep(e.target.value)}></input>
+                <input type="number" placeholder='Repeticiones' min={minRR} max={maxRR} onChange={e => setRep(e.target.value)}></input>
                 <p>{set.descanso}</p>
                 <button onClick={()=> setNextSet()}>Actualizar</button> 
              </div>
