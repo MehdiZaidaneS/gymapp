@@ -13,30 +13,54 @@ body{
   text-align: center;
   justify-content: center;
   margin: 0 auto;
-  border: 1px solid black;
   width: fit-content;
-  padding: 50px;
+}
+
+.component{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sets{
    font-size: 40px;
+  background-color: rgb(67, 73, 83);
+   
 }
 
 .sets input{
   font-size: 40px;
+  text-align: center;
+  width: fit-content;
 }
 
 .sets button{
   font-size: 40px;
 }
 
+.sets h1{
+  font-style: italic;
+  margin: 0 auto;
+}
+
+.set{
+  padding: 50px 150px 50px 150px;
+  border: solid 2px rgba(255, 255, 255, 0.178);
+}
 
 .repPRange{
   text-align: center;
   background-color: rgba(169, 169, 169, 0.616);
+  
   margin: 0 auto;
   width: fit-content;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
+}
+
+.repPRange p{
+  font-style: italic;
 }

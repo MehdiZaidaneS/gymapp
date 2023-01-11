@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import "./App.css"
 import { useNavigate } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ const Component = (props) => {
     const [set2, set2Done] = useState(false)
     const [set3, set3Done] = useState(false)
     const [set4, set4Done] = useState(false)
+    const [finished, setFinished] = useState(false)
     const [rep, setRep] = useState(0)
     const [kilos4, setKilos4] = useState(0)
     const [kilos2, setKilos2] = useState(0)
@@ -52,10 +53,6 @@ const Component = (props) => {
       },
 
     ]
-    
-
-    
-
     const setNextSet = () => {
       if(rep >= 10 && props.set1===true){
           setKilos2(Number(props.kilos)+2)
@@ -98,40 +95,48 @@ const Component = (props) => {
         set4Done(true)
       }else if (rep >= 10 && set4 === true){  
         set4Done(false)
-        props.setKilos(Number(props.kilos)+2)   
+        props.setKilos(Number(props.kilos)+2)
+        setFinished(true)   
       }else if(rep < 10 && set4 === true){
         props.setKilos(Number(props.kilos)-2)
         set4Done(false)
+        setFinished(true)
       }
 
 
 
    }
-
-
    const moveBack = () =>{
+      setFinished(false)
       navigate("/")
+      props.ejercicio = "";
    }
 
   return (
-    <div>   
+    <div className='component'> 
+
       <div className="repPRange">
-         <h1>Rep Range: {minRR}-{maxRR}</h1>
-         <p>Last kilos at {props.ejercicio} : {props.kilos}kg</p>
-      </div>
-      <div className='column'>
+           <h1>Rep Range: {minRR}-{maxRR}</h1>
+           <p>Last kilos at {props.ejercicio} : {props.kilos}kg</p>
+           {
+             finished &&
+             <button onClick={moveBack}>Back</button>
+           }
+        </div>  
+      
+      <div className='column'> 
        {
         sets.map(set => {
           return(
           <div key={set.id} className="sets">
             { set.done &&
-              <div>
+              <div className='set'>
                 <h1>{props.ejercicio}</h1>
-                <p>{set.name}</p>
-                <p>Kilos: {set.kilos}</p>
-                <input type="number" placeholder='Repeticiones' min={minRR} max={maxRR} onChange={e => setRep(e.target.value)}></input>
+                <h2>{set.name}</h2>
+                <p>{set.kilos}kg</p>
+                <input type="number" placeholder='Reps' min={minRR} max={maxRR} onChange={e => setRep(e.target.value)}></input>
                 <p>{set.descanso}</p>
-                <button onClick={()=> setNextSet()}>Actualizar</button> 
+                <button onClick={()=> setNextSet()}>Update</button> 
              </div>
             }
           </div>
@@ -139,10 +144,7 @@ const Component = (props) => {
         })
        }      
       </div> 
-      {
-        !props.set1 &&
-        <button onClick={moveBack}>Back</button>
-      }
+      
     </div>
   )
 }

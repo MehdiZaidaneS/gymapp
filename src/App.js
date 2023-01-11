@@ -9,7 +9,7 @@ function App() {
 
 
   const [ejercicio, setEjercicio] = useState(null)
-  const [kilos, setKilos] = useState(null)
+  const [kilos, setKilos] = useState(0)
   const [set1, set1Done] = useState(false)
 
 
@@ -18,7 +18,7 @@ function App() {
    <HashRouter>
      <Routes>
        <Route path="/">
-         <Route index element={<Frontpage  setEjercicio={setEjercicio}  setKilos={setKilos} set1Done={set1Done}/>} />
+         <Route index element={<Frontpage  setEjercicio={setEjercicio}  setKilos={setKilos} set1Done={set1Done}  ejercicio={ejercicio}/>} />
          <Route exact path="/component" element={<Component ejercicio={ejercicio} kilos={kilos} set1={set1} setKilos={setKilos} set1Done={set1Done}/>}/>
        </Route>
      </Routes>

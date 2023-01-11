@@ -16,6 +16,7 @@
 .repRange form{
     display: flex;
     flex-direction: column;
+    text-align: center;
   
 }
 
@@ -33,4 +34,10 @@
    background: none;
    color: rgb(104, 101, 101);
 
+}
+
+.repRange form p{
+    color: red;
+    font-weight: bold;
+  
 }
