@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom"
-import logo from "./logo2.png"
+import logo from "./logo.png"
 import "./frontpage.css"
 
 
@@ -33,11 +33,11 @@ const Frontpage  = (props) => {
 
   return (
     <div className='frontpage'>
-   
+          
          <div className="repRange">
             <h1>Automatic Gym Kilos</h1> 
             <form onSubmit={handleSubmit}>
-               <input type="text" placeholder='Set Exercise Name'></input>    
+               <input maxlength="15" type="text" placeholder='Set Exercise Name'></input>    
                <input type="number" placeholder='Set Kgs' min="0" max="200" ></input>
                {err && <p>{err}</p>}
                <button>Set Exercise</button>

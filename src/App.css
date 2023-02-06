@@ -1,5 +1,9 @@
 body{
-  background-color: rgba(54, 54, 54, 0.459);
+  /* background-color: rgba(54, 54, 54, 0.459); */
+  /* background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg"); */
+  background-image: url("C:\Users\mehdi\OneDrive\Escritorio\RutinaApp\rutina\src\components\fondo.avif");
+  background-repeat: no-repeat;
+ background-size: cover;
   color: white;
 }
 
@@ -24,19 +28,20 @@ body{
   justify-content: center;
 }
 
-.sets{
-  font-size: 40px;
-  background-color: rgb(67, 73, 83);   
+
+.component img{
+  margin-top: 20px;
 }
 
 .sets input{
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   width: fit-content;
 }
 
 .sets button{
-  font-size: 40px;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
 .sets h1{
@@ -45,22 +50,69 @@ body{
 }
 
 .set{
-  padding: 50px 150px 50px 150px;
+  background-image: url("https://static.wixstatic.com/media/1fe81f_b389ca8569de46a098ee2ccf67cac909~mv2.jpg/v1/fill/w_856,h_824,al_t,q_85,usm_0.66_1.00_0.01,enc_auto/1fe81f_b389ca8569de46a098ee2ccf67cac909~mv2.jpg");
+  background-color: rgba(0, 0, 0, 0.692);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 120px 150px 120px;
   border: solid 2px rgba(255, 255, 255, 0.178);
+}
+
+.set p{
+  margin: 15px 0px 15px 0px;
 }
 
 .repPRange{
   text-align: center;
-  background-color: rgba(169, 169, 169, 0.616);
   
+  border: solid 2px gray;
+  border-radius: 5%;
   margin: 0 auto;
   width: fit-content;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+}
+
+.repPRange h1{
+  font-style: italic;
+  margin-bottom: 0 auto;
+
 }
 
 .repPRange p{
+  font-style: italic;
+
+}
+
+#completed{
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+
+
+
+.set h1{
+ font-size: 70px;
+}
+
+.set h2{
+  font-size: 40px;
+  margin: 10px;
+}
+
+.set h3{
+  font-size: 35px;
+  margin: 10px;
+}
+
+.set p{
+  margin: 0 auto;
   font-style: italic;
 }
 
@@ -68,5 +120,5 @@ body{
   color: rgb(81, 255, 0);
   font-size: 20px;
   font-style: italic;
-
+  margin: 12px 0px 12px 0px;
 }

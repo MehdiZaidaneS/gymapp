@@ -13,7 +13,9 @@
     background-image: url("https://www.ihrsa.org/uploads/Articles/Column-Width/industry-news_muscular-bicep-dumbbell-stock_column.jpg");
     background-color: rgba(82, 81, 81, 0.692);
     background-blend-mode: overlay;
-    padding: 110px 150px 110px 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 110px 140px 110px 140px;
     border-radius: 5%;
     border: solid 2px rgb(92, 92, 92);
     margin: 0 auto;
@@ -27,7 +29,7 @@
 
 .repRange h1{
     color: rgb(0, 0, 0);
-    background-color: rgba(196, 193, 193, 0.507);
+    background-color: rgba(196, 193, 193, 0.432);
     font-size: 40px;
     margin: 0;
     margin-bottom: 40px;

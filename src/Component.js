@@ -1,6 +1,7 @@
 import React, {  useState } from 'react'
 import "./App.css"
 import { useNavigate } from 'react-router-dom'
+import logo from "./components/logo.png"
 
 
 
@@ -127,17 +128,16 @@ const Component = (props) => {
    }
 
   return (
-    <div className='component'> 
-
-      <div className="repPRange">
-           <h1>Rep Range: {minRR}-{maxRR}</h1>
-           <p>Last kilos at {props.ejercicio} : {props.kilos}kg</p>
-           {
-             finished &&
-             <button onClick={moveBack}>Back</button>
-           }
-        </div>  
-      
+    <div className='component'>     
+      {
+      finished &&
+        <div className="repPRange">
+          <h1>CONGRATULATIONS!</h1>
+          <p>You have completed your exercise.</p>
+          <p id='completed'>Your last kilos at {props.ejercicio} was: {props.kilos}kg</p>
+          <button onClick={moveBack}>Back</button>
+        </div>
+      }
       <div className='column'> 
        {
         sets.map(set => {
@@ -146,8 +146,9 @@ const Component = (props) => {
             { set.done &&
               <div className='set'>
                 <h1>{props.ejercicio}</h1>
+                <p>Rep. Range: {minRR}-{maxRR}</p>
                 <h2>{set.name}</h2>
-                <p>{set.kilos}kg</p>
+                <h3>{set.kilos}kg</h3>
                 <input type="number" placeholder='Reps' min={1} max={maxRR} onChange={e => setRep(e.target.value)}></input>
                 <p>{set.descanso}</p>
                 {err && <p id='error'>Please type Reps to continue!</p>}
@@ -158,7 +159,9 @@ const Component = (props) => {
           ) 
         })
        }      
-      </div> 
+      </div>
+
+      <img src={logo} width={70} alt=''></img> 
       
     </div>
   )
