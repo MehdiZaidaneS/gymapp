@@ -4,14 +4,36 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
    
 }
 
 .repRange{
-    background-color: rgba(241, 241, 241, 0.815);
-    padding: 50px;
+    /* background-color: rgba(241, 241, 241, 0.815); */
+    background-image: url("https://www.ihrsa.org/uploads/Articles/Column-Width/industry-news_muscular-bicep-dumbbell-stock_column.jpg");
+    background-color: rgba(82, 81, 81, 0.692);
+    background-blend-mode: overlay;
+    padding: 110px 150px 110px 150px;
     border-radius: 5%;
+    border: solid 2px rgb(92, 92, 92);
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
 }
+
+.frontpage img {
+   margin-top: 20px;
+}
+
+.repRange h1{
+    color: rgb(0, 0, 0);
+    background-color: rgba(196, 193, 193, 0.507);
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+
 
 .repRange form{
     display: flex;
@@ -21,23 +43,37 @@
 }
 
 .repRange form button{
-    margin-top: 20px;
+   
     cursor: pointer;
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .repRange form input{
    margin: 0 auto;
+   font-size: 20px;
    margin-bottom: 10px;
    text-align: center;
    justify-content: center;
    width: fit-content;
-   background: none;
-   color: rgb(104, 101, 101);
+   background: rgba(201, 201, 201, 0.836);
+   color: rgb(68, 67, 67);
+   padding: 10px 20px 10px 20px;
 
 }
 
+
+::placeholder{
+    font-style: italic;
+    color: rgba(87, 86, 86, 0.623);
+}
+
 .repRange form p{
-    color: red;
+    color: rgb(255, 0, 0);
     font-weight: bold;
+    margin: 0;
   
 }
