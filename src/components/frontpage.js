@@ -11,8 +11,6 @@ const Frontpage  = (props) => {
    const [err, setErr] = useState(null)
 
     const handleSubmit = async (e) =>{
-
-
          e.preventDefault()
          const ejer= e.target[0].value;
          const kil= e.target[1].value;
