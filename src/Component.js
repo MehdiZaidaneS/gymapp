@@ -142,17 +142,21 @@ const Component = (props) => {
        {
         sets.map(set => {
           return(
-          <div key={set.id} className="sets">
+          <div>
             { set.done &&
+            <div key={set.id} className="sets">
               <div className='set'>
                 <h1>{props.ejercicio}</h1>
                 <p>Rep. Range: {minRR}-{maxRR}</p>
-                <h2>{set.name}</h2>
-                <h3>{set.kilos}kg</h3>
+                <div className='stats'>
+                  <h2>{set.name}</h2>
+                  <h2 id='kilos'>- {set.kilos}kg</h2>
+                </div>
                 <input type="number" placeholder='Reps' min={1} max={maxRR} onChange={e => setRep(e.target.value)}></input>
-                <p>{set.descanso}</p>
+                {/* <p>{set.descanso}</p> */}
                 {err && <p id='error'>Please type Reps to continue!</p>}
                 <button onClick={()=> setNextSet()}>Update</button> 
+              </div>
              </div>
             }
           </div>

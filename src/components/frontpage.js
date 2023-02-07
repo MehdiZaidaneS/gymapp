@@ -40,7 +40,7 @@ const Frontpage  = (props) => {
                <input maxlength="15" type="text" placeholder='Set Exercise Name'></input>    
                <input type="number" placeholder='Set Kgs' min="0" max="200" ></input>
                {err && <p>{err}</p>}
-               <button>Set Exercise</button>
+               <button>Start Training</button>
             </form>
           </div>
           <img src={logo} width={70} alt=''></img>

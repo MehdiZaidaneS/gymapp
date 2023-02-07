@@ -33,15 +33,20 @@ body{
   margin-top: 20px;
 }
 
-.sets input{
+.set input{
   font-size: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
   text-align: center;
   width: fit-content;
 }
 
-.sets button{
+.set button{
   font-size: 25px;
-  margin-top: 20px;
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+  width: fit-content;
 }
 
 .sets h1{
@@ -49,19 +54,26 @@ body{
   margin: 0 auto;
 }
 
-.set{
+
+.sets{
   background-image: url("https://static.wixstatic.com/media/1fe81f_b389ca8569de46a098ee2ccf67cac909~mv2.jpg/v1/fill/w_856,h_824,al_t,q_85,usm_0.66_1.00_0.01,enc_auto/1fe81f_b389ca8569de46a098ee2ccf67cac909~mv2.jpg");
   background-color: rgba(0, 0, 0, 0.692);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 150px 120px 150px 120px;
+  /* padding: 130px 80px 130px 80px; */
+  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+
   border: solid 2px rgba(255, 255, 255, 0.178);
 }
 
+
 .set p{
-  margin: 15px 0px 15px 0px;
+  margin: 0 auto;
 }
 
 .repPRange{
@@ -95,30 +107,53 @@ body{
 
 
 
-
+.set{
+ 
+  display: flex;
+  flex-direction: column;
+}
 
 .set h1{
- font-size: 70px;
+ font-size: 85px;
 }
 
 .set h2{
-  font-size: 40px;
-  margin: 10px;
+  font-size: 55px;
+  margin:7px;
+
+  color: rgb(81, 255, 0);
 }
 
 .set h3{
-  font-size: 35px;
+  font-size: 40px;
   margin: 10px;
 }
 
 .set p{
   margin: 0 auto;
   font-style: italic;
+  font-size: 17px;
+  margin-bottom: 50px;
+
 }
 
 #error{
-  color: rgb(81, 255, 0);
-  font-size: 20px;
-  font-style: italic;
-  margin: 12px 0px 12px 0px;
+  color: rgb(255, 115, 0);
+  font-size: 18px;
+  font-style: italic; 
+   margin: 0 auto; 
+   margin-top: 15px;
+
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+#kilos{
+  color: white;
 }
