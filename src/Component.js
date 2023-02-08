@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import "./App.css"
 import { useNavigate } from 'react-router-dom'
 import logo from "./components/logo.png"
@@ -11,12 +11,14 @@ const Component = (props) => {
     const [set2, set2Done] = useState(false)
     const [set3, set3Done] = useState(false)
     const [set4, set4Done] = useState(false)
+    const [time, setTime] = useState(0)
     const [finished, setFinished] = useState(false)
     const [rep, setRep] = useState(0)
     const [kilos4, setKilos4] = useState(0)
     const [kilos2, setKilos2] = useState(0)
     const [kilos3, setKilos3] = useState(0)
     const [err, setErr] = useState(false)
+    const [err2, setErr2] = useState(false)
 
     const minRR = 10;
     const maxRR = 12;
@@ -56,21 +58,33 @@ const Component = (props) => {
 
     ]
 
+
+    useEffect(()=>{
+      const counter =
+      time>0 && setInterval(() => setTime(time-1), 1000);
+      return () => clearInterval(counter)
+    }, [time])
+  
+  
+
     const setNextSet = () => {
 
-    if(rep !== 0){
+    if(rep !== 0 && time === 0){
       if(rep >= 10 && props.set1===true){
         setKilos2(Number(props.kilos)+2)
         props.setKilos(Number(props.kilos)+2)
         set2Done(true)
         props.set1Done(false)
         setRep(0)
+        setTime(20)
+       
     }else if(rep < 10 && props.set1===true){
       setKilos2(Number(props.kilos)-2)
       props.setKilos(Number(props.kilos)-2)
       set2Done(true)
       props.set1Done(false)
       setRep(0)
+      setTime(10)
     }else if(rep >= 10 && set2===true){
       setKilos3(Number(props.kilos)+2)
       props.setKilos(Number(props.kilos)+2) 
@@ -78,6 +92,7 @@ const Component = (props) => {
       props.set1Done(false)
       set3Done(true)
       setRep(0)
+      setTime(20)
     }else if(rep < 10 && set2 === true){
       setKilos3(Number(props.kilos)-2)
       props.setKilos(Number(props.kilos)-2)
@@ -85,6 +100,7 @@ const Component = (props) => {
       props.set1Done(false)
       set3Done(true)
       setRep(0)
+      setTime(10)
     }else if(rep < 10 && set3 === true){
       setKilos4(Number(props.kilos)-2)
       props.setKilos(Number(props.kilos)-2)
@@ -93,6 +109,7 @@ const Component = (props) => {
       set3Done(false)
       set4Done(true)
       setRep(0)
+      setTime(10)
     }
     else if(rep >= 10 && set3===true){
       setKilos4(Number(props.kilos)+2)
@@ -102,22 +119,27 @@ const Component = (props) => {
       set3Done(false)
       set4Done(true)
       setRep(0)
+      setTime(20)
     }else if (rep >= 10 && set4 === true){  
       set4Done(false)
       props.setKilos(Number(props.kilos)+2)
       setFinished(true)
-      setRep(0)   
+      setRep(0)  
+      setTime(0)
     }else if(rep < 10 && set4 === true){
       props.setKilos(Number(props.kilos)-2)
       set4Done(false)
       setFinished(true)
       setRep(0)
+      setTime(0)
     }
       
     setErr(false)
-
-    }else if (rep === 0){
-       setErr(true)
+    setErr2(false)
+    } else if(time > 0){
+       setErr2(true)
+    } else if (rep === 0){
+      setErr(true)
     }
 }
 
@@ -138,6 +160,7 @@ const Component = (props) => {
           <button onClick={moveBack}>Back</button>
         </div>
       }
+      
       <div className='column'> 
        {
         sets.map(set => {
@@ -148,6 +171,9 @@ const Component = (props) => {
               <div className='set'>
                 <h1>{props.ejercicio}</h1>
                 <p>Rep. Range: {minRR}-{maxRR}</p>
+                { time > 0 &&
+                  <p id='rest'>Rest for {time} secs</p>
+               }
                 <div className='stats'>
                   <h2>{set.name}</h2>
                   <h2 id='kilos'>- {set.kilos}kg</h2>
@@ -155,6 +181,7 @@ const Component = (props) => {
                 <input type="number" placeholder='Reps' min={1} max={maxRR} onChange={e => setRep(e.target.value)}></input>
                 {/* <p>{set.descanso}</p> */}
                 {err && <p id='error'>Please type Reps to continue!</p>}
+                {err2 && <p id='error'>You need to rest to continue!</p>}
                 <button onClick={()=> setNextSet()}>Update</button> 
               </div>
              </div>
