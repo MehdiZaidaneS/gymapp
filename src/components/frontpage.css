@@ -1,3 +1,7 @@
+
+
+
+
 .frontpage{
    color: rgb(255, 255, 255);
    height: 100vh;
@@ -79,4 +83,31 @@
     font-weight: bold;
     margin: 0;
   
+}
+
+
+@media only screen and (max-width: 680px) {
+    .frontpage{
+      width: fit-content;
+      margin: 0 auto;
+      justify-content: center;
+    }
+  
+   .repRange{
+     padding: 80px 90px 80px 90px;
+     
+   }
+
+   .repRange h1{
+    font-size: 30px;
+    }
+
+    .repRange form button{
+        font-size: 15px;
+    }
+
+    .repRange form input{
+        font-size: 15px;
+     }
+       
 }

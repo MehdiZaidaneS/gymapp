@@ -140,6 +140,7 @@ const Component = (props) => {
        setErr2(true)
     } else if (rep === 0){
       setErr(true)
+      setErr2(false)
     }
 }
 
